@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 // Admin routes
 // this groups all admin routes
-Route::prefix('admin')->middleware(['auth', 'auth.isAdmin'])->name('admin.')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'auth.isAdmin', 'verified'])->name('admin.')->group(function () {
     Route::resource('/users', UserController::class);
 });
