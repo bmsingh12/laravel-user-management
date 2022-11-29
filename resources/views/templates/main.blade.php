@@ -51,7 +51,7 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" style="color: #ffffff">Home</a>
+                        <a href="{{ route('user.profile') }}" style="color: #ffffff">Profile</a>
                         <a href="{{ url('/logout') }}" style="color: #ffffff"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 

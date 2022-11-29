@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
+use \App\Http\Controllers\User\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+// User related pages
+Route::prefix('user')->middleware(['auth', 'verified'])->name('user.')->group(function () {
+    Route::get('profile', Profile::class)->name('profile');
+});
 
 // Admin routes
 // this groups all admin routes
